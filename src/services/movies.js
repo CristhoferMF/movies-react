@@ -2,7 +2,7 @@ import axios from 'axios';
 
 axios.defaults.baseURL = 'https://api.themoviedb.org/3';
 axios.defaults.params = {
-    language: 'en-US',
+    language: 'es-ES',
 }
 axios.defaults.headers = {
     'Content-Type': 'application/json;charset=utf-8',
@@ -22,6 +22,7 @@ export const image = (path, width = "original") => {
 }
 
 export const getPhotos = (id) => {
+    axios.defaults.params = {}
     return axios.get(`/movie/${id}/images`);
 }
 
