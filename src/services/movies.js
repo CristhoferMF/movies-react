@@ -3,14 +3,11 @@ import axios from 'axios';
 axios.defaults.baseURL = 'https://api.themoviedb.org/3';
 axios.defaults.params = {
     language: 'es-ES',
-}
-axios.defaults.headers = {
-    'Content-Type': 'application/json;charset=utf-8',
-    'Autorization' : `Bearer ${process.env.REACT_APP_THEMOVIEDB4_TOKEN}`
+    'api_key': process.env.REACT_APP_THEMOVIEDB3_API_KEY
 }
 
 export const getMovies = (page) => {
-    return axios.get(`/moive/popular`, { page });
+    return axios.get(`/movie/popular`, { page });
 }
 
 export const getMovie = (id) => {

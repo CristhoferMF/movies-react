@@ -1,18 +1,20 @@
-import MovieBackground from "../components/MovieBackground";
 import MovieCardList from "../components/MovieCardList";
+import MovieHeroBanner from "../components/MovieHeroBanner";
+import { MovieSelectedProvider } from "../context/MovieSelected";
 
 function MoviesPage() {
     return (
         <>
-        <MovieBackground/>
         <main className="h-screen overflow-y-auto">
         <div className="container mx-auto grid grid-rows-2 h-full">
-            <section>
-            <h1>Test Pagina movies</h1>
+        <MovieSelectedProvider>
+            <section className="flex flex-col justify-end">
+            <MovieHeroBanner/>
             </section>
             <section className="flex flex-col justify-center">
             <MovieCardList/>
             </section>
+        </MovieSelectedProvider>
         </div>
         </main>
         </>

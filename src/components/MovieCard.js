@@ -1,8 +1,7 @@
-function MovieCard({image, alt}) {
+function MovieCard({image, alt, onClick, isSelected}) {
     return (
-        <a className="cursor-pointer" href="/#">
-        <img src={image} draggable="false"  alt={alt} className="border-2 select-none bg-gray-700 h-60 w-40 object-cover rounded-md shadow-md" />
-        </a>
+        <img src={image} draggable="false"  alt={alt}  onClick={onClick}
+            className={"border-2 cursor-pointer select-none bg-gray-700 h-60 w-40 object-cover transition-transform duration-150 rounded-md shadow-md "+ (isSelected?"scale-110":"")} />
     )
 }
 
