@@ -4,20 +4,18 @@ import { MovieSelectedProvider } from "../context/MovieSelected";
 
 function MoviesPage() {
     return (
-        <>
-        <main className="h-screen overflow-y-auto">
-        <div className="container mx-auto grid grid-rows-2 h-full">
         <MovieSelectedProvider>
+        <main className="h-screen overflow-y-auto">
+        <div className="container mx-auto grid grid-rows-2 h-full px-3 xl:px-0 ">
             <section className="flex flex-col justify-end">
             <MovieHeroBanner/>
             </section>
-            <section className="flex flex-col justify-center">
+            <section className="flex flex-col justify-center overflow-hidden">
             <MovieCardList/>
             </section>
-        </MovieSelectedProvider>
         </div>
         </main>
-        </>
+        </MovieSelectedProvider>
     )
 }
 
